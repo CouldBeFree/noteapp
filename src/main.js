@@ -2,8 +2,12 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+import noteEditor from './components/noteEditor'
+import note from './components/note'
 import router from './router'
 
+Vue.component('noteEditor', noteEditor);
+Vue.component('note', note);
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
