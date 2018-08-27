@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="main">
     <noteEditor @text="getText($event)"></noteEditor>
-    <note :array="cards"></note>
+    <notesGrid :array="cards"></notesGrid>
   </div>
 </template>
 
