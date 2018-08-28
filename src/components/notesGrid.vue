@@ -8,6 +8,11 @@
   export default {
     name: "notesGrid",
     props: ['array'],
+    data(){
+      return{
+
+      }
+    },
     mounted(){
       //let wrapper = document.getElementsByClassName('.notes-grid');
       let wrapper = this.$refs.wrapper;
@@ -16,6 +21,13 @@
         gutter: 10,
         percentPosition: true
       });
+    },
+    watch: {
+      reloadMasonry(newVal){
+        if(this.array.length !== newVal.array.length){
+          alert('True')
+        }
+      }
     }
   }
 </script>
