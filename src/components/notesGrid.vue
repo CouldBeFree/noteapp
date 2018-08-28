@@ -10,7 +10,7 @@
     props: ['array'],
     data(){
       return{
-
+        initialCount: 0
       }
     },
     mounted(){
@@ -21,11 +21,25 @@
         gutter: 10,
         percentPosition: true
       });
+      this.setInitialCount();
+    },
+    methods:{
+      setInitialCount(){
+        this.initialCount = this.array
+      }
+    },
+    beforeUpdate(){
+      console.log('Before update')
+    },
+    updated(){
+      console.log('updated')
     },
     watch: {
-      reloadMasonry(newVal){
-        if(this.array.length !== newVal.array.length){
-          alert('True')
+      array: function(val) { // watch it
+        let msnry = new Masonry();
+        if(val){
+          msnry.reloadItems();
+          msnry.layout()
         }
       }
     }
