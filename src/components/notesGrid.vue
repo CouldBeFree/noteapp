@@ -13,13 +13,18 @@
       let wrapper = this.$refs.wrapper;
       let msnry = new Masonry(wrapper, {
         itemSelector: '.note',
-        columnWidth: 200,
-        gutter: 10
+        gutter: 10,
+        percentPosition: true
       });
     }
   }
 </script>
 
 <style scoped lang="scss">
+
+  .note{
+    width: 33.33%;
+    margin-bottom: 10px;
+  }
 
 </style>
