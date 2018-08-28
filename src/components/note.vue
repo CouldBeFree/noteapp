@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div v-for="item in array" :style="{backgroundColor: item.background}" :key="item.id">
-      <p>{{item.text}}</p>
+    <div>
+      <p>{{currentItem.text}}</p>
     </div>
   </div>
 </template>
@@ -9,7 +9,7 @@
 <script>
     export default {
         name: "note",
-        props: ['array']
+        props:['currentItem']
     }
 </script>
 
