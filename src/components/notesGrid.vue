@@ -10,17 +10,17 @@
     props: ['array'],
     data(){
       return{
-        initialCount: 0
+        initialCount: 0,
+        manry: new Masonry()
       }
     },
     mounted(){
-      //let wrapper = document.getElementsByClassName('.notes-grid');
-      let wrapper = this.$refs.wrapper;
+      /*let wrapper = this.$refs.wrapper;
       let msnry = new Masonry(wrapper, {
         itemSelector: '.note',
         gutter: 10,
         percentPosition: true
-      });
+      });*/
       this.setInitialCount();
     },
     methods:{
@@ -28,18 +28,11 @@
         this.initialCount = this.array
       }
     },
-    beforeUpdate(){
-      console.log('Before update')
-    },
-    updated(){
-      console.log('updated')
-    },
     watch: {
       array: function(val) { // watch it
-        let msnry = new Masonry();
         if(val){
           msnry.reloadItems();
-          msnry.layout()
+          msnry.layout();
         }
       }
     }
